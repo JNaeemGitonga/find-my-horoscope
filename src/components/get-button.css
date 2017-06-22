@@ -1,0 +1,14 @@
+.get-button{
+  margin-top: 1em;
+  text-align:center;
+}
+button{
+  
+    border: none;
+    background: #bbc2c7;
+    color: white;
+    border-radius: .5em;
+    padding: .5em .7em;
+    font-size: 1em;
+    
+}

@@ -1,0 +1,54 @@
+[
+    {
+        "sign": "capricorn",
+        "quotes": ["You'll eat lots of ice cream!", "Wear a swim suit!"]
+        
+    },
+    {
+        "sign": "libra",
+        "quotes": ["Eat all the chocolate today!", "Do yoga today; you'll feel better!"]
+        
+    },
+    {
+        "sign": "aries",
+        "quotes": ["Eat chocolate!", "Windows are cool!"]
+    },
+    {
+        "sign": "aquarius",
+        "quotes": ["Avoid projectors today!", "Look up at the sky for something cute!"]
+      
+    },
+    {
+        "sign": "cancer",
+        "quotes": ["Hands down you are the best!", "You will continue to have great successes!"]
+      
+    },
+    {
+        "sign": "gemini",
+        "quotes": ["Pick one!", "Always do your best!"]
+    },
+    {
+        "sign": "leo",
+        "quotes": ["Go to a bookstore!","Find a person wearing a blue shirt!"]
+    },
+    {
+        "sign": "sagittarius",
+        "quotes": ["Stay out of dark allies!", "Eat more plants!"]
+    },
+    {
+        "sign": "scorpio",
+        "quotes": ["Avoid pencils at all costs!","Outlet surger protectors are your friend!"]
+    },
+    {
+        "sign": "pisces",
+        "quotes": ["Hug friends today!","Well golly eat a cheesecake slice!"]
+    },
+    {
+        "sign": "virgo",
+        "quotes": ["7000-series Metro today will be cute like every day but still go on it","Drink some hot apple cider"]
+    },
+    {
+        "sign": "taurus",
+        "quotes": ["Ride a cute bus today","Go outside today"]
+    }
+]

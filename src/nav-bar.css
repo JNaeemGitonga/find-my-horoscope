@@ -1,0 +1,17 @@
+.navigation-bar {
+	/*text-align: center;*/
+	background-color: #e97726;
+	
+	padding: 1px 0;
+	/*position: relative;*/
+  
+}
+
+li{
+      display: inline-block;
+      list-style: none;
+      /*float: right;*/
+      margin: .4em;
+
+      
+}

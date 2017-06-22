@@ -1,0 +1,13 @@
+h1{
+  text-align: center;
+}
+
+.container{
+  background-image: url("http://www.indiaparenting.com/zodiac/zodiaccircle.jpg");
+  background-size: cover;
+  height: calc( 100vh - 65px);
+}
+
+.info{
+  padding: 20em 20em 0 20em ;
+}

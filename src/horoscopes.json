@@ -11,7 +11,7 @@
     },
     {
         "sign": "aries",
-        "quotes": ["Eat chocolate!", "Windows are cool!"]
+        "quotes": ["Eat chocolate!", "Windows are cool!", "Greet the great outdoors with open arms!"]
     },
     {
         "sign": "aquarius",
@@ -20,12 +20,12 @@
     },
     {
         "sign": "cancer",
-        "quotes": ["Hands down you are the best!", "You will continue to have great successes!"]
+        "quotes": ["Hands down you are the best!", "You will continue to have great successes!", "Invest in yourself!"]
       
     },
     {
         "sign": "gemini",
-        "quotes": ["Pick one!", "Always do your best!"]
+        "quotes": ["Pick one!", "Always do your best!", "Trust your gut!"]
     },
     {
         "sign": "leo",
@@ -33,7 +33,7 @@
     },
     {
         "sign": "sagittarius",
-        "quotes": ["Stay out of dark allies!", "Eat more plants!"]
+        "quotes": ["Stay out of dark allies!", "Eat more plants!", "Get plenty of rest."]
     },
     {
         "sign": "scorpio",
@@ -41,7 +41,7 @@
     },
     {
         "sign": "pisces",
-        "quotes": ["Hug friends today!","Well golly eat a cheesecake slice!"]
+        "quotes": ["Hug friends today!","Well golly eat a cheesecake slice!", "Make the best choice!"]
     },
     {
         "sign": "virgo",
@@ -49,6 +49,6 @@
     },
     {
         "sign": "taurus",
-        "quotes": ["Ride a cute bus today","Go outside today"]
+        "quotes": ["Ride a cute bus today","Go outside today!", "Talk to a loved one." ]
     }
 ]

@@ -1,13 +1,21 @@
 h1{
   text-align: center;
+ color: blue;
+   -webkit-text-fill-color: #117cc7; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+   font-size:6em;
+   margin-bottom: 0;
 }
 
 .container{
-  background-image: url("http://www.indiaparenting.com/zodiac/zodiaccircle.jpg");
+  background: url("zodiaccircle.png");
   background-size: cover;
   height: calc( 100vh - 65px);
 }
 
 .info{
-  padding: 20em 20em 0 20em ;
+  padding: 10.5em 10.5em 0 10.5em ;
 }
+
+/*http://www.indiaparenting.com/zodiac/zodiaccircle.jpg*/

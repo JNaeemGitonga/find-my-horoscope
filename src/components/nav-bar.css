@@ -1,7 +1,11 @@
+a{
+      color:white;
+}
+
 .navigation-bar {
 	/*text-align: center;*/
 	background-color: #e97726;
-	
+	text-align: right;
 	padding: 1px 0;
 	/*position: relative;*/
   

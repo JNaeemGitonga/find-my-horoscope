@@ -1,5 +1,5 @@
 import React from 'react';
-import '../nav-bar.css';
+import './nav-bar.css';
 
 export default function Navbar(props){
     const links = props.links.map( (link, index) =>(

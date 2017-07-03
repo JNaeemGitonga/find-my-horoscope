@@ -11,16 +11,20 @@
     },
     {
         "sign": "aries",
-        "quotes": ["Eat chocolate!", "Windows are cool!", "Greet the great outdoors with open arms!"]
+        "quotes": ["You are at the helm, take command!", 
+        "Go to the source today, and hear it from the horse's mouth!",
+         "Greet the great outdoors with open arms!"]
     },
     {
         "sign": "aquarius",
-        "quotes": ["Avoid projectors today!", "Look up at the sky for something cute!"]
+        "quotes": ["Today is yorur day to make an investment!", 
+        "Reward someone's effort!"]
       
     },
     {
         "sign": "cancer",
-        "quotes": ["Hands down you are the best!", "You will continue to have great successes!", "Invest in yourself!"]
+        "quotes": ["Hands down you are the best!",
+         "You will continue to have great successes!", "Invest in yourself!"]
       
     },
     {
@@ -29,7 +33,8 @@
     },
     {
         "sign": "leo",
-        "quotes": ["Go to a bookstore!","Find a person wearing a blue shirt!", "Help someone in some way."]
+        "quotes": ["Go to a bookstore!",
+        "Find a person who is smiling and smile with them!", "Help someone in some way."]
     },
     {
         "sign": "sagittarius",
@@ -37,15 +42,17 @@
     },
     {
         "sign": "scorpio",
-        "quotes": ["Avoid pencils at all costs!","Outlet surger protectors are your friend!"]
+        "quotes": ["Avoid fools at all cost!",
+        "Who says you have to be at their beck and call, treat yourself"]
     },
     {
         "sign": "pisces",
-        "quotes": ["Hug friends today!","Well golly eat a cheesecake slice!", "Make the best choice!"]
+        "quotes": ["Be strong today, stick to your guns!", "Make the best choice!"]
     },
     {
         "sign": "virgo",
-        "quotes": ["7000-series Metro today will be cute like every day but still go on it","Drink some hot apple cider"]
+        "quotes": ["Today is your day to go above and beyond",
+        "Drink some hot apple cider"]
     },
     {
         "sign": "taurus",

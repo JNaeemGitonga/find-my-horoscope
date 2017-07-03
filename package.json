@@ -1,19 +1,35 @@
 {
-  "name": "find-my-horoscope",
+  "name": "find-my-horoscope-client-v2", 
   "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "dotenv": "^4.0.0",
-    "react-scripts": "0.8.5"
-  },
-  "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
-  },
+  "description": "A full-stack starter template",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "node index.js",
+    "dev": "run-p dev:server dev:client start",
+    "dev:client": "cd client && cross-env BROWSER=none npm start -- --color=always | xp http://localhost:3000/ http://localhost:8080/",
+    "dev:server": "cd server && npm start",
+    "install": "npm run install:server && npm run install:client",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "heroku-postbuild": "cd client && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "server/node_modules",
+    "client/node_modules"
+  ],
+  "author": "Joe Turner <jturner@thinkful.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cross-env": "^3.1.4",
+    "express": "^4.14.1",
+    "http-proxy-middleware": "^0.17.3",
+    "npm-run-all": "^4.0.1",
+    "react": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0",
+    "xp": "^1.0.1"
   }
 }

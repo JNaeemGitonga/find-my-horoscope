@@ -7,7 +7,6 @@ import PickSign from './pick-sign';
 import './getmyscope.css';
 import Navbar from './nav-bar';
 
-// import Image from './image';
 
 
 export default class GetMyScope extends React.Component {
@@ -15,7 +14,7 @@ export default class GetMyScope extends React.Component {
         super(props);
         this.state = {
             clicked: false,
-            horoscope: "Drink plenty of water today!",
+            horoscope: "",
             quote: [],
             zodiac: '',
             links:[

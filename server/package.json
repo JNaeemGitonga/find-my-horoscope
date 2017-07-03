@@ -1,7 +1,7 @@
 {
   "name": "find-my-horoscope-server",
   "version": "0.1.0",
-  "description": "Server portion of a full-stack starter template",
+  "description": "Server portion of a full-stack react-redux app",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"

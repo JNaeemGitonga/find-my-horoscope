@@ -1,6 +1,7 @@
 {
   "name": "find-my-horoscope-client",
-  "version": "0.1.0",
+  "version": "0.15.0",
+  "description": "a full-stack project to demosntrate how a react-redux app should be setup"
   "private": true,
   "devDependencies": {
     "dotenv": "^4.0.0"

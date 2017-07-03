@@ -18,7 +18,7 @@
     "server/node_modules",
     "client/node_modules"
   ],
-  "author": "Joe Turner <jturner@thinkful.com>",
+  "author": "Jaha Naeem Gitonga <blackb8r@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",

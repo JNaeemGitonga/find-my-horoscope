@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "Joe Turner <jturner@thinkful.com>",
+  "author": "Jaha Naeem Gitonga <blackb8r@gmail.com>",
   "license": "MIT",
   "dependencies": { 
     "express": "^4.14.1",

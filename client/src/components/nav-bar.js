@@ -1,26 +1,22 @@
 import React from 'react';
 import './nav-bar.css';
+import {connect} from 'react-redux'
 
-export default function Navbar(props){
-    const links = props.links.map( (link, index) =>(
-       <li key={index}>
-           <a href={link.href}>
-               {link.text}
-            </a>
-       </li>     
+export class Navbar extends React.Component {
+  
+    render(){
+        return (
+        
+            <div className="navigation-bar">
+            <nav className="navigation-bar-nav">
+                <ul>
+                    <li>HOME</li>
+                    <li>BACK</li>
+                </ul>
+            </nav>
+            </div>
+        );
 
-    ));
-
-    return (
-       
-        <div className="navigation-bar">
-           
-           <nav className="navigation-bar-nav">
-            <ul>
-                {links}
-            </ul>
-           </nav>
-        </div>
-    );
-    
+    }
 }
+export default connect()(Navbar)

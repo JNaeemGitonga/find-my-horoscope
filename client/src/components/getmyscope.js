@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
 import GetHoroscope from './get-button';
 import GetAnotherHoroscope from './get-another-button';
 import HoroscopeList from './horoscopelist';
@@ -9,68 +9,74 @@ import Navbar from './nav-bar';
 
 
 
-export default class GetMyScope extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            clicked: false,
-            horoscope: "",
-            quote: [],
-            zodiac: '',
-            links:[
-              {
-                    text: 'HOME',
-                    href: '#'
-                },{
-                    text: "BACK",
-                    href: "#"
-                }
-                
-            ]
-        }
-      
-    this.setZodiac=this.setZodiac.bind(this);
-    
-    }
-  
-  setZodiac(sign){
-    this.setState({zodiac:sign.target.value})
-  } 
-  getHeader(){
-    //your code goes here 
-  }
+export class GetMyScope extends React.Component {
+   
   
   
-  //TO DRY UP CODE MAKE STATE OBJECT WITH VALUES YOU WANT TO DISPLAY
     render() {
-      if(!this.state.clicked){
+      if(this.props.clicked === false){
          return (
           <div className="navbar-only">
-           <Navbar links={this.state.links}/>
+           <Navbar />
              <div className="container"> 
                <div className="info">
                 <h1>What is Your Horoscope?</h1>
-                <PickSign zodiac={this.state.zodiac}  onChange={this.setZodiac}/>
-                <GetHoroscope onClick={() => this.setState({clicked:true})}/> 
+                <PickSign />
+                <GetHoroscope /> 
               </div>
              </div>
           </div>
         ) 
       } 
+      console.log('from GetMyScope', this.props)
       return (
         <div className="navbar-only">
-         <Navbar links={this.state.links}/>
+         <Navbar />
               <div className="container">
                 <div className="info">
                   <h1>Here&#39;​s Your Horoscope!</h1>
-                  <HoroscopeList horoscopes={this.props.horoscopes} zodiac={this.state.zodiac}/>
-                  <PickSign zodiac={this.state.zodiac} onChange={this.setZodiac}/>
-                  <GetAnotherHoroscope onClick={() => this.setState({clicked:true})} />
+                  <HoroscopeList />
+                  <PickSign  />
+                  <GetAnotherHoroscope  />
                 </div>
               </div>
        </div>
       )
 
     }
-  }
+}
 
+ 
+  const mapStateToProps = state => ({
+    clicked: state.clicked,
+    zodiac: state.zodiac,
+    horoscope: state.horoscope,
+    signsAndQuotes: state.signsAndQuotes
+
+  })
+
+  export default connect(mapStateToProps)(GetMyScope);
+
+//export default class GetMyScope extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         clicked: false,
+    //         horoscope: "",
+    //         quote: [],
+    //         zodiac: '',
+    //         links:[
+    //           {
+    //                 text: 'HOME',
+    //                 href: '#'
+    //             },{
+    //                 text: "BACK",
+    //                 href: "#"
+    //             }
+                
+    //         ]
+    //     }
+      
+    // this.setZodiac=this.setZodiac.bind(this);
+    
+    // }

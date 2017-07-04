@@ -1,7 +1,7 @@
 {
   "name": "find-my-horoscope-client",
   "version": "0.15.0",
-  "description": "a full-stack project to demosntrate how a react-redux app should be setup"
+  "description": "a full-stack project to demosntrate how a react-redux app should be setup",
   "private": true,
   "devDependencies": {
     "dotenv": "^4.0.0"
@@ -12,7 +12,8 @@
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "react-spinkit": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

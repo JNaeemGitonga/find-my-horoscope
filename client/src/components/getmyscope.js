@@ -6,11 +6,13 @@ import HoroscopeList from './horoscopelist';
 import PickSign from './pick-sign';
 import './getmyscope.css';
 import Navbar from './nav-bar';
-
+import {fetchHoroscopes} from '../actions';
 
 
 export class GetMyScope extends React.Component {
-   
+   componentDidMount(){
+     this.props.dispatch(fetchHoroscopes());
+   }
   
   
     render() {
@@ -28,14 +30,14 @@ export class GetMyScope extends React.Component {
           </div>
         ) 
       } 
-      console.log('from GetMyScope', this.props)
+      // console.log('from GetMyScope', this.props)
       return (
         <div className="navbar-only">
          <Navbar />
               <div className="container">
                 <div className="info">
                   <h1>Here&#39;​s Your Horoscope!</h1>
-                  <HoroscopeList />
+                  <HoroscopeList  />
                   <PickSign  />
                   <GetAnotherHoroscope  />
                 </div>
@@ -49,9 +51,9 @@ export class GetMyScope extends React.Component {
  
   const mapStateToProps = state => ({
     clicked: state.clicked,
-    zodiac: state.zodiac,
-    horoscope: state.horoscope,
-    signsAndQuotes: state.signsAndQuotes
+    sign: state.sign,
+    horoscopes: state.horoscopes,
+   
 
   })
 

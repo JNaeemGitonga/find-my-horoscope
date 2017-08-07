@@ -5,9 +5,10 @@ export const fetchHoroscopeRequest = () => ({
 });
 
 export const FETCH_HOROSCOPE_SUCCESS = 'FETCH_HOROSCOPE_SUCCESS';
-export const fetchHoroscopeSuccess = horoscope => ({
+export const fetchHoroscopeSuccess = (horoscopes) => ({
     type: FETCH_HOROSCOPE_SUCCESS,
-    horoscope
+    horoscopes
+    
 });
  
 export const FETCH_HOROSCOPE_ERROR = 'FETCH_HOROSCOPE_ERROR';
@@ -17,21 +18,29 @@ export const fetchHoroscopeError = error => ({
 });
 
 
-
-
-
-export const  PICK_ZODIAC = 'PICK_ZODIAC';
-export const pickZodiac = zodiac => ({
-    type: PICK_ZODIAC,
-    zodiac
+export const  PICK_SIGN = 'PICK_SIGN';
+export const pickSign = sign => ({
+    type: PICK_SIGN,
+    sign
 });
 
 export const GET_BUTTON_CLICKED = 'GET_BUTTON_CLICKED';
-export const getButtonClicked = (clicked) => ({
+export const getButtonClicked = clicked => ({
     type: GET_BUTTON_CLICKED,
     clicked
 })
 
+export const SWITCH_BACK = 'SWITCH_BACK';
+export const switchBack = clicked => ({
+    type: SWITCH_BACK,
+    clicked
+})
+
+export const SET_DAY = 'SET_DAY';
+export const setDay = day => ({
+    type: SET_DAY,
+    day
+})
 
 export const fetchHoroscopes = ()=> dispatch =>{
     return fetch('api/horoscopes').then( res => {
@@ -40,7 +49,7 @@ export const fetchHoroscopes = ()=> dispatch =>{
         }
         return res.json();
     }).then( horoscope => {
-       // console.log("horoscopes from actions fetch", horoscope)
-        dispatch(fetchHoroscopeSuccess(horoscope))
+        // console.log("horoscopes from actions fetch", horoscope)
+        return dispatch(fetchHoroscopeSuccess(horoscope))
     });
 }

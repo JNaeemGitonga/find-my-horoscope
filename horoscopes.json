@@ -1,0 +1,314 @@
+[
+ {
+        "sign": "capricorn",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["You'll know when the time is right.", "Expect the best!","Get Plenty of money"]
+            },{
+            "day":"2",
+            "quotes": ["You will reap great rewards for your struggles","You should consider all options.", "Now is the time, why wait?"]
+            },{
+            "day":"3",
+            "quotes": ["Think of today as the best day of your life","If it is lost, it can be found", "As long as you know, you're fine."]
+            },{
+            "day":"4",
+            "quotes": ["Dusk is when the fun begins.", "Remember to study the greats", "Life is your biggest challenge."]
+            },{
+            "day":"5",
+            "quotes": ["Today you will receive a gift in disguise.","Focus on what makes you happy","No matter how difficult it gets, never let  'em see you sweat."]
+            },{
+            "day": "6",
+            "quotes":["Feelings are lagely illusory", "How you handle crisis means more than how you handle peace","Find a way to improve your home."]
+            },{
+            "day": "0",
+            "quotes":["Make everyday count.", "Relax, you've got this under control.", "Think vacation, and relaxation!"]
+            }
+        ]
+    },
+    {
+        "sign": "libra",
+        "horoscopes":[{
+            "day":"1",
+            "quotes": ["Eat all the chocolate today!", "Do yoga today; you'll feel better!","Any day above ground is a good day."]
+            },{
+            "day":"2",
+            "quotes":["Please, you got to keep ya' head up.", "Now-a-days we gotta think big!", "Be sure to double-check your double-check."]
+            },{
+            "day":"3",
+            "quotes": ["If it ain't right, it ain't right.", "Remember, you control your destiny.", "Make the best of every opportunity."] 
+            },{
+            "day":"4",
+            "quotes": ["Greet you challenges with open arms.", "Say goodbye to pain and hard times.", "Laugh at life's blunders, never take yourself too serious."]
+            },{
+            "day":"5",
+            "quotes":["When you make a mistake, make a promise to learn from it.", "When you look at it, it really is as simple as 1-2-3.","Let the music take control."]
+            },{
+            "day":"6",
+            "quotes":["Don't cheat yourself, treat yourself.","Family is important.","It's a good day to put down a bad habit."]
+            },{
+            "day":"0",
+            "quotes": ["Thinking is not only good for the mind, it solves problems.", "If you're hot, you gots to chill.", "Take a permanent break from worry."]
+            }
+        ]
+    },
+    {
+        "sign": "aries",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["You are at the helm, take command!", "Go to the source today, and hear it from the horse's mouth!", "Greet the great outdoors with open arms!"]
+            },{
+            "day":"2",
+            "quotes":["Step light, and carry a big stick.","Play a fool to catch a fool.","It ain't over until it's over."]
+            },{
+            "day":"3",
+            "quotes":["Better days are a thought away.","No news may be good news, enjoy the calm.", "There's strength in numbers, build your team."]
+            },{
+            "day":"4",
+            "quotes":["perfect practice makes perfect.", "Sieze the moment, it may be your only chance.","Practice patience and precision."]
+            },{
+            "day":"5",
+            "quotes":["You gotta pay the cost to be the boss.","Be cool baby, be cool...","Try to see it from their perspective."]
+            },{
+            "day":"6",
+            "quotes":["The tounge is a beast to be tamed.", "There must be a dozen ways to do it, chose the best.","Sometimes you have to \"coger los mangos bajitos\"."]
+            },{
+            "day":"0",
+            "quotes":["You get back what you put out.","If you want the best, be the best.","Remember, technology even's the playing field."]
+            }
+        ]
+    },
+    {
+        "sign": "aquarius",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["Today is your day to make an investment!","Recognize another's effort!","Relax, let it come to you."]
+            },{
+            "day":"2",
+            "quotes":["Once you get it, you got it.","Play for keeps!","Stick to you guns."]
+            },{
+            "day":"3",
+            "quotes": ["Never take a loved one for granite.","The only thing to fear is not planning.","It's not what you see but what you think before you see it."]
+            },{
+            "day":"4",
+            "quotes":["Sometimes you're too close to it find it.","Beware of the false prophets.","Never settle for less."]
+            },{
+            "day":"5",
+            "quotes":["Remember, the greatest love of all is yourself.","Make a promise to give it your all.","You are what you eat, strive to eat healthy."]
+            },{
+            "day":"6",
+            "quotes":["True wealth, comes from good health and wise ways.","If you think to get paid, then you're sure to get paid.","Step outside of your comfort zone."]
+            },{
+            "day":"0",
+            "quotes":["Laughter heals the soul.","Find time to focus on you.","Make it your business to help another."]
+            }
+        ]
+    },
+    {
+        "sign": "cancer",
+        "horoscopes":[{
+            "day":"1",
+            "quotes": ["Hands down you are the best!", "You will continue to have great successes!", "Invest in yourself!"]
+            },{
+            "day":"2",
+            "quotes":["If you stay ready, you ain't gotta get ready.","Take a risk, change the game.", "Remember that you are a trendsetter."]
+            },{
+            "day":"3",
+            "quotes":["The best has yet to come.","You are a leader of your peers.","Take it but take it light."]
+            },{
+            "day":"4",
+            "quotes":["Make life worth living.","Make peace with what you are unable to change.","To see things clearly is to look with wisdom."]
+            },{
+            "day":"5",
+            "quotes":["Sometimes you have to take a step back to step forward.","Mediocrity it the enemy of success.","Speak life and breath happiness."]
+            },{
+            "day":"6",
+            "quotes":["If things could always be worse, they could also always be better.","Be the change you want to see in the world.", "Stand for what you believe in."]
+            },{
+            "day":"0",
+            "quotes":["Make your plan or plan to fail.","Low risk means low return.","Your community is your sanctuary."]
+            }
+        ]
+    },
+    {
+        "sign": "gemini",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["Pick one!", "Always do your best!", "Trust your gut!"]
+            },{
+            "day":"2",
+            "quotes":["There is strength in numbers.","Face today with great expectations.","The details matter."]
+            },{
+            "day":"3",
+            "quotes":["Every action has an equal an opposite reaction.","Life is about creating yourself, not finding yourself.","Never entertain bull****."]
+            },{
+            "day":"4",
+            "quotes":["Sometimes no is the best answer you can give.","The wild is full of surprises.","Sometimes things have to play hard."]
+            },{
+            "day":"5",
+            "quotes":["If it ain't broke, don't fix it.","Ignore the things you can't achieve, it is the best revenge.","Work on your hobby, or get one."]
+            },{
+            "day":"6",
+            "quotes":["Take a step back and breath deep.","Let's face the facts.","Get busy living or get busy dying."]
+            },{
+            "day":"0",
+            "quotes":["Time is the great equalizer.","You are here to make things better.","Heal yourself and live prosperous."]
+            }
+        ]
+    },
+    {
+        "sign": "leo",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["Grab a book and read it!","Find a person who is smiling and smile with them!", "Help someone in some way."]
+            },{
+            "day":"2",
+            "quotes":["It's never too late to learn a new skill.","Try to see the best in others.","If you had to do it the hard way, would you?"]
+            },{
+            "day":"3",
+            "quotes":["Step away from the crowd.","Feel your way through touchy situations.","Never make a promise you can't keep"]
+            },{
+            "day":"4",
+            "quotes":["Diamonds are formed under pressure and so will you.","Remember the golden rule.","Do what you always wanted to do."]
+            },{
+            "day":"5",
+            "quotes":["Be honest with yourself.","A mind is a terrible thing to waste.","There's strong and then there's...yeah you get the picture."]
+            },{
+            "day":"6",
+            "quotes":["If you never meet a stranger, you will always meet a friend.","All you gotta do is hold on."]
+            },{
+            "day":"0",
+            "quotes":["Egypt wasn't built in a day.","Behold the greatness that lies within.","Haste makes waste, be anxious for nothing."]
+            }
+        ]
+    },
+    {
+        "sign": "sagittarius",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["Stay out of dark allies!", "Eat more plants!", "Get plenty of rest."]
+            },{
+            "day":"2",
+            "quotes":["If you can't stand the heat, then get out the kitchen.","Know thyself.","If you don't know your history you are bound to repeat it."]
+            },{
+            "day":"3",
+            "quotes":["Make something out of nothing.","Never outshine the master.","Always say less than necessary."]
+            },{
+            "day":"4",
+            "quotes":["Never appear too perfect.", "Re-create yourself, be the master of your own image.", "Think as you like but when in Egypt do was the Egyptians."]
+            },{
+            "day":"5",
+            "quotes":["If you can't change your surroundings, change your surroundings.","Know the ledge.","Find joy in the small things life has to offer."]
+            },{
+            "day":"6",
+            "quotes":["Sometimes the simple solution is the best.","Know when to hold 'em, know when to fold 'em, know when to walk away, know when to run.","The bigger they are, the harder they fall."]
+            },{
+            "day":"0",
+            "quotes":["The world is your stage.","Make your next move your best move.","A bird in the hand is worth two in the bush."]
+            }
+        ]
+    },
+    {
+        "sign": "scorpio",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["Avoid fools at all cost!","Who says you have to be at their beck and call, treat yourself","Never count you eggs before they hatch."]
+            },{
+            "day":"2",
+            "quotes":["The only limitations are those you impose on yourself.","Mind over everything.","Prepare for the best and it will come."]
+            },{
+            "day":"3",
+            "quotes":["Put something up for a rainy day.","Never get caught slippin'.","Plan your work, work your plan."]
+            },{
+            "day":"4",
+            "quotes":["If you can't avoid the loss, mitigate it.","Always remember, everything is negotiable.","Heal the mind meditaing like the Dalai Lama."]
+            },{
+            "day":"5",
+            "quotes":["Labor Under Correct Knowledge--your LUCK.","Change is inevitable, embrace it.","Keep calm under fire."]
+            },{
+            "day":"6",
+            "quotes":["You can have what you want, be what you want.","Expression is a gift in itself.","Your presence is a present."]
+            },{
+            "day":"0",
+            "quotes": ["Stop advertising for free and get your brand up.","The meek shall inherit the earth.","To be a star you must shine your own light."]
+            }
+        ]
+    },
+    {
+        "sign": "pisces",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["When one door is closed another one opens.", "Opportunity could be disguised as misfortune","Speak now or forever hold your piece."]
+            },{
+            "day":"2",
+            "quotes":["Conflict cannot survive without your participation.", "How people treat you is their karma, how you react is yours.","When you finally decided to let go of your past something better will come."]
+            },{
+            "day":"3",
+            "quotes":["The way to success is through your pursuit of knowledge.","Start out how you're going to hold out.","Investing in assets is key."]
+            },{
+            "day":"4",
+            "quotes":["Focus on what people do versus what they say.","Do more than you are paid for, and soon be paid more for what you do.","Your big opportunity may be right where you are now!"]
+            },{
+            "day":"5",
+            "quotes":["Depending on your attitude, defeat or failure could be a stepping stone.","Dare to be wrong and risk getting it right.","Talk is cheap."]
+            },{
+            "day":"6",
+            "quotes":["It is better to be feared than loved.","Court attention at all cost.","Trust in proven methods, dismiss conjecture."]
+            },{
+            "day":"0",
+            "quotes":["Get the wind behind your back and the ground beneath your feet.","Choose your mate wisely.","Always praise progress."]
+            }
+        ]
+    },
+    {
+        "sign": "virgo",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["Today is your day to go above and beyond","Find a vegan snack, eat it!","Ask and ye shall receive."]
+            },{
+            "day":"2",
+            "quotes":["Tell 'em how you really feel.","The raise you need is the one you'll give to yourself.","Learn to cut expenses and increase earnings."]
+            },{
+            "day":"3",
+            "quotes":["Only bite off what you can chew.","Eat to live.","Always think, family first.","The time is now...no seriously look at the time."]
+            },{
+            "day":"4",
+            "quotes":["Start learning a new language.","When you smile the world smiles with you, but when you cry, you cry alone.","Hell have no fury like a woman scorn."]
+            },{
+            "day":"5",
+            "quotes":["There is always more that meets the eye.","Have an open mind but not so much that your brain falls out.","Call a spade a spade."]
+            },{
+            "day":"6",
+            "quotes":["Try to let your hair down.","Time waits for no man, or woman.","Whatever bothers you, smile at it."]
+            },{
+            "day":"0",
+            "quotes":["Go to the kitchen get the biggest knife and cut the bullshit!","Trying to be the best means if you fail you are still good.","Prove it to yourself."]
+            }
+        ]
+    },
+    {
+        "sign": "taurus",
+        "horoscopes": [{
+            "day":"1",
+            "quotes":["All publicity is good publicity.","Go outside today!", "Talk to a loved one." ]
+            },{
+            "day":"2",
+            "quotes":["Don't try to be perfect, bur rather the perfect you.","Enjoy the day for it belongs to you.","Many are the plans of man."]    
+            },{
+            "day":"3",
+            "quotes":["Refuse to surrender, refuse to quit.","Once the goal is established the road to it gets easier.",""]
+            },{
+            "day":"4",
+            "quotes":["Tomorrow is a vision, yesterday is a memory, the present is a gift, so enjoy.","Train through the pain rejoice in the victory.","Choose your thoughts carefully."]
+            },{
+            "day":"5",
+            "quotes":["Happiness is just a thought away.","No problem can be solved from the same level of thought that created it.","You are part of the whole."]
+            },{
+            "day":"6",
+            "quotes":["Learn how to learn and everything will be easier.","Celebrate you!","Music feels good to the soul."]
+            },{
+            "day":"0",
+            "quotes":["Take the initiative.","Each one teach one.","Just when the caterpillar thought the world was over, it became a butterfly."]
+            }
+        ]
+    }
+]

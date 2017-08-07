@@ -1,15 +1,25 @@
 {
   "name": "find-my-horoscope-server",
-  "version": "0.1.0",
+  "version": "0.10.0",
   "description": "Server portion of a full-stack react-redux app",
   "main": "index.js",
+  "engines": {"node": "6.11.1"},
   "scripts": {
     "start": "nodemon index.js"
   },
   "author": "Jaha Naeem Gitonga <blackb8r@gmail.com>",
   "license": "MIT",
-  "dependencies": { 
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
     "express": "^4.14.1",
+    "mongoose": "^4.11.1",
+    "morgan": "^1.8.2",
     "nodemon": "^1.11.0"
-  }
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongoose"
+  ]
 }

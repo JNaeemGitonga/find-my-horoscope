@@ -1,5 +1,5 @@
 {
-  "name": "find-my-horoscope-client-v2", 
+  "name": "find-my-horoscope-client-v2",
   "version": "0.15.0",
   "description": "A full-stack project to demonstrate how a react-redux app should look",
   "main": "index.js",
@@ -22,9 +22,12 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
     "cross-env": "^3.1.4",
+    "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "http-proxy-middleware": "^0.17.3",
+    "mongoose": "^4.11.1",
     "npm-run-all": "^4.0.1",
     "react": "^15.6.1",
     "react-redux": "^5.0.5",

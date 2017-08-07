@@ -1,22 +1,34 @@
 import React from 'react';
 import './pick-sign.css';
 import {connect} from 'react-redux';
-import {pickZodiac} from '../actions'
+import {pickSign} from '../actions'
 
 export class PickSign extends React.Component{
+  
+  constructor(props){
+    super(props);
+      this.state = {
+        sign:''
+      }
+  }
 
-  pickZodiac(e){
+    selectZodiac(e){
+   
     e.preventDefault();
-    const value = this.input.value;
-    console.log("this the value from PickSign", value, this.props)
-    this.props.dispatch(pickZodiac( value))
-    console.log("props from PickSign", this.props)
-    return value
+    const value = e.target.value;
+    // console.log('sign',value)
+    
+    // console.log("this the value from PickSign", value, this.props)
+    this.props.dispatch(pickSign( value))
+    // console.log("props from PickSign", this.props)
+    this.setState({sign:e.target.value})
+    // console.log('this', this) 
+    // return value
 
   }
   render(){
     return (
-      <form onChange={e => this.pickZodiac(e)}>
+      <form onChange={e => this.selectZodiac(e)}>
         <select ref={input => this.input = input}>
             <option value="">Select Your Sign</option>  
             <option value="aries">Aries</option>
@@ -38,8 +50,8 @@ export class PickSign extends React.Component{
 }
 
 const mapStateToProps = state => ({
-  zodiac: state.zodiac,
-  signsAndQuotes: state.signsAndQuotes
+  sign:state.sign,
+  horoscopes: state.horoscopes
 })
 
 export default connect(mapStateToProps)(PickSign);

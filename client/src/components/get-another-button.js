@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import{fetchHoroscopes} from '../actions'
 
 export class GetAnotherHoroscope extends React.Component {
-    getAnotherHoroscope(e){
-        e.preventDefualt();
+    getAnotherHoroscope(){
+        // e.preventDefualt();
         this.props.dispatch(fetchHoroscopes());
     }
 
@@ -21,7 +21,7 @@ export class GetAnotherHoroscope extends React.Component {
 }
 const mapStateToProps = state => ({
  
-    horoscope: state.horoscope,
-    signsAndQuotes: state.signsAndQuotes
+    horoscopes: state.horoscopes,
+    
 })
 export default connect(mapStateToProps)(GetAnotherHoroscope)

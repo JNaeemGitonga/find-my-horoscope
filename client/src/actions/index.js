@@ -17,7 +17,6 @@ export const fetchHoroscopeError = error => ({
     error
 });
 
-
 export const  PICK_SIGN = 'PICK_SIGN';
 export const pickSign = sign => ({
     type: PICK_SIGN,
@@ -42,6 +41,11 @@ export const setDay = day => ({
     day
 })
 
+export const SCOPE_OF_DAY = 'SCOPE_OF_DAY';
+export const scopeOfDay = () => ({
+    type: SCOPE_OF_DAY,
+})
+
 export const fetchHoroscopes = ()=> dispatch =>{
     return fetch('api/horoscopes').then( res => {
         if (!res.ok){
@@ -49,7 +53,6 @@ export const fetchHoroscopes = ()=> dispatch =>{
         }
         return res.json();
     }).then( horoscope => {
-        // console.log("horoscopes from actions fetch", horoscope)
         return dispatch(fetchHoroscopeSuccess(horoscope))
     });
 }

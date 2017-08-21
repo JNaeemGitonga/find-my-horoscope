@@ -1,22 +1,23 @@
 h1{
   text-align: center;
- color: blue;
-   -webkit-text-fill-color: #117cc7; /* Will override color (regardless of order) */
-   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
-   font-size:6em;
+   color: black;
+   font-size:4vw;
    margin-bottom: 0;
    margin-top: 0;
 }
 
-.container{
-  background: url("zodiaccircle.png");
-  background-size: cover;
-  height: calc( 100vh - 65px);
-}
-
 .info{
-  padding: 10.5em 10.5em 0 10.5em ;
+
+    /* background: url('solar-eclipse_1024.jpg') no-repeat;
+    background-size:contain;
+    width:100%;
+    height:0;
+    padding-top:24.45%; */
+   /* THE ABOVE ALLOWS THE BACKGROUND IMAGE TO BE DISPLAYED IN PORTION TO ITS WIDTH AND HEIGHT
+   IT IS DISPLAYED IN IT'S TOTALITY INSIDE OF THE PADDING CREATED BY IT'S WIDTH HEIGHT '415/1934*100  
+   IT DOES HAVE SOME LIMITATIONS AS THE DIV WILL BE USELESS */
 }
 
-/*http://www.indiaparenting.com/zodiac/zodiaccircle.jpg*/
+img{
+  width:100%
+}

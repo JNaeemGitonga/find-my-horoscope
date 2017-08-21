@@ -5,7 +5,9 @@ const initialState = {
     clicked: false,
     error: null,
     sign:'',
-    horoscopes: []
+    horoscopes: [],
+    scopeOfDay:[],
+    day:''
 }
 
 
@@ -18,7 +20,6 @@ const initialState = {
     else if (action.type === 'FETCH_HOROSCOPE_REQUEST') {
         return Object.assign({}, state, {
             loading: true
-            
         })
     }else if (action.type === 'FETCH_HOROSCOPE_SUCCESS') {
         return Object.assign({}, state, {
@@ -33,12 +34,31 @@ const initialState = {
         return Object.assign({}, state, {
             clicked: true
         })
-     
     } else if (action.type === 'SWITCH_BACK'){
         return Object.assign({}, state, {
             clicked: false
         })
-    }  return state
+    } else if (action.type === 'SCOPE_OF_DAY'){
+        let d = new Date();
+        let today = d.getDay();
+        let array;
+        state.horoscopes.forEach((oneHoroscope,index) => {
+            for (let sign in oneHoroscope){
+                if (state.sign === oneHoroscope.sign){
+                    oneHoroscope.horoscopes.find((day, index2) => {
+                        if(parseInt(day.day) === today){
+                            array = day.quotes
+                        }
+                    });
+                }
+            }
+        })
+        return Object.assign({}, state, {
+                scopeOfDay:[...array]
+        })
+         
+    }
+    return state
 }   
 
 export default zodiacReducer

@@ -1,4 +1,4 @@
-h3{
+/* h3{
   margin-top: 30px;
   text-align:center;
   font-size: 4em;
@@ -9,5 +9,8 @@ h4{
   text-align:center;
   margin-top: 0;
   font-size: 2.5em;
-  /*color: rgb(166, 184, 127);*/
+} */
+
+.horoscope-list{
+  text-align:center;
 }

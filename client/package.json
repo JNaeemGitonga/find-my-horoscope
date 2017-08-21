@@ -4,7 +4,7 @@
   "description": "a full-stack project to demosntrate how a react-redux app should be setup",
   "private": true,
   "devDependencies": {
-    
+    "remote-redux-devtools": "^0.5.12"
   },
   "dependencies": {
     "react": "^15.4.2",
@@ -14,7 +14,6 @@
     "redux-thunk": "^2.2.0",
     "react-scripts": "0.9.5",
     "react-spinkit": "^2.1.1"
-    
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,5 +21,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-   "engines": { "node": "8.1.2" }
+  "engines": {
+    "node": "8.1.2"
+  }
 }

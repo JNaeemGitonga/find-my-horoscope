@@ -1,31 +1,15 @@
 import React from 'react';
 import './pick-sign.css';
 import {connect} from 'react-redux';
-import {pickSign} from '../actions'
+import {pickSign} from '../actions';
 
 export class PickSign extends React.Component{
   
-  constructor(props){
-    super(props);
-      this.state = {
-        sign:''
-      }
-  }
-
     selectZodiac(e){
-   
     e.preventDefault();
     const value = e.target.value;
-    // console.log('sign',value)
-    
-    // console.log("this the value from PickSign", value, this.props)
-    this.props.dispatch(pickSign( value))
-    // console.log("props from PickSign", this.props)
-    this.setState({sign:e.target.value})
-    // console.log('this', this) 
-    // return value
-
-  }
+    this.props.dispatch(pickSign(value))
+    }
   render(){
     return (
       <form onChange={e => this.selectZodiac(e)}>
@@ -50,9 +34,7 @@ export class PickSign extends React.Component{
 }
 
 const mapStateToProps = state => ({
-  sign:state.sign,
-  horoscopes: state.horoscopes
+  sign:state.sign
 })
 
 export default connect(mapStateToProps)(PickSign);
-// came from line 14value={props.zodiac} className="zodiac-signs" onChange={ e => props.onChange(e)}

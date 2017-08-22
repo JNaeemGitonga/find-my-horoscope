@@ -21,6 +21,25 @@ horoscopeSchema.methods.apiRepr = function() {
     }
 }
 
+const userSchema = mongoose.Schema({
+    facebookId: {type: String, required: true},
+    accessToken: {type: String},
+    name: {type: String},
+    email: {type: String},
+    displayName: {type: String}
+})
+
+userSchema.methods.apiRepr = function() {
+    return{
+        id: this._id,
+        facebookId: this.facebookId,
+        name: this.name,
+        email: this.email,
+        displayName: this.displayName
+    }
+}
+
+const User = mongoose.model('User', userSchema);
 const Quotes = mongoose.model('Quotes', quoteSchema);
 const Horoscope = mongoose.model('Horoscope', horoscopeSchema);
-module.exports = {Horoscope};
+module.exports = {Horoscope, User};

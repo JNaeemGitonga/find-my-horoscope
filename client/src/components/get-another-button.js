@@ -8,7 +8,7 @@ export class GetAnotherHoroscope extends React.Component {
         this.props.dispatch(fetchHoroscopes());
     }
     getAnotherHoroscope(e){
-        e.preventDefualt();
+        e.preventDefault();
         this.props.dispatch(scopeOfDay());
     }
     render(){

@@ -15,9 +15,14 @@ export class GetHoroscope extends React.Component {
     }
 
   render(){
+    
       return (
         <div className="get-button">
-          <button onClick={() => this.getHoroscope()}>Get My Horoscope</button>
+          <button onClick={() =>{
+            if (this.props.sign === ''){
+              return 
+               
+            }this.getHoroscope()} }>Get My Horoscope</button>
         </div>
       )
   }
@@ -25,5 +30,6 @@ export class GetHoroscope extends React.Component {
 
 const mapStateToProps = state => ({
   clicked: state.clicked,
+  sign:state.sign
 })
 export default connect(mapStateToProps)(GetHoroscope)

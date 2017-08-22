@@ -23,15 +23,19 @@ horoscopeSchema.methods.apiRepr = function() {
 
 const userSchema = mongoose.Schema({
     facebookId: {type: String, required: true},
-    accessToken: {Type: String},
-    name: {type: String}
+    accessToken: {type: String},
+    name: {type: String},
+    email: {type: String},
+    displayName: {type: String}
 })
 
 userSchema.methods.apiRepr = function() {
     return{
+        id: this._id,
         facebookId: this.facebookId,
-        // name: this.name,
-        id: this._id
+        name: this.name,
+        email: this.email,
+        displayName: this.displayName
     }
 }
 

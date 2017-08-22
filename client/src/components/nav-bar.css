@@ -1,15 +1,15 @@
 a{
-      color:white;
+      /* color:white; */
 }
 
 .navigation-bar {
 	/*text-align: center;*/
-	background-color: black;
+	background-color: white;
 	text-align: right;
 	padding: 1px 0;
       /*position: relative;*/
       border-bottom: 1px solid white;
-      color:white
+      /* color:white */
   
 }
 
@@ -18,6 +18,16 @@ li{
       list-style: none;
       /*float: right;*/
       margin: .4em;
+}
 
-      
+ul{
+      display:inline-block;
+      margin-right: 10px;
+      padding-left: 0px;
+}
+
+.welcome-message{
+      float:left;
+      margin-top: 16px;
+      margin-left: 16px;
 }

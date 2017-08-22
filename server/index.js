@@ -2,13 +2,14 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const passport = require('passport');
+const FacebookStragegy = require('passport-facebook');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const BearerStrategy = require('passport-http-bearer').Strategy;
 
-
-const {Horoscope} = require('./models');
+const {Horoscope, User} = require('./models');
 const {PORT, DATABASE_URL} = require('./config');
 
 const app = express();
@@ -18,6 +19,50 @@ app.use(bodyParser.json());
 app.use(morgan('common'));
 app.use(cors());
 mongoose.Promise = global.Promise;
+
+if(process.env.NODE_ENV !== 'production') {
+    secret = require('./secret');
+}
+
+passport.use(new FacebookStrategy({
+    clientID: FACEBOOK_APP_ID,
+    clientSecret: FACEBOOK_APP_SECRET,
+    callbackURL: "http://localhost:3000/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
+
+passport.use(
+    new BearerStrategy((token, done) => {
+            // Job 3: Update this callback to try to find a user with a
+            // matching access token.  If they exist, let em in, if not,
+            // don't.
+      User
+        .find({accessToken: token})
+        .exec()
+        .then(user => {
+          if (!user) {
+            return done(null, false);
+          }
+          return done(null, user[0]);
+        })
+        .catch(err => console.log(err));
+    })
+);
+
+app.get('/auth/facebook',
+passport.authenticate('facebook'));
+
+app.get('/auth/facebook/callback',
+passport.authenticate('facebook', { failureRedirect: '/login' }),
+function(req, res) {
+  // Successful authentication, redirect home.
+  res.redirect('/');
+});
 
 app.get('/api/horoscopes', (req, res) => {
     Horoscope

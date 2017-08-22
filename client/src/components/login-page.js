@@ -9,6 +9,8 @@ export class LoginPage extends React.Component {
     render() {
     //   if(this.props.clicked === false){
          return (
+        <div className='outter-container'>
+            
           <div className="navbar-only">
            <Navbar />
              <div className="container"> 
@@ -18,6 +20,7 @@ export class LoginPage extends React.Component {
               </div>
              </div>
           </div>
+        </div>
         ) 
     //   } 
     //   return (
@@ -47,4 +50,4 @@ export class LoginPage extends React.Component {
 
   })
 
-  export default connect(mapStateToProps)(GetMyScope);
+  export default connect(mapStateToProps)(LoginPage);

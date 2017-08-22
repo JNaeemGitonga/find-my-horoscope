@@ -26,4 +26,4 @@ export class GetHoroscope extends React.Component {
 const mapStateToProps = state => ({
   clicked: state.clicked,
 })
-export default connect(mapStateToProps)(GetHoroscope)
+export default connect(mapStateToProps)(GetHoroscope) 

@@ -24,3 +24,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# FB CLIENT STUFF
+secret.js

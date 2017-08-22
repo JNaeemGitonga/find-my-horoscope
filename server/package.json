@@ -3,7 +3,9 @@
   "version": "0.10.0",
   "description": "Server portion of a full-stack react-redux app",
   "main": "index.js",
-  "engines": {"node": "6.11.1"},
+  "engines": {
+    "node": "6.11.1"
+  },
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -15,7 +17,10 @@
     "express": "^4.14.1",
     "mongoose": "^4.11.1",
     "morgan": "^1.8.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-http-bearer": "^1.0.1"
   },
   "keywords": [
     "node",

@@ -25,7 +25,6 @@ export class App extends React.Component {
             <Router>
                 <div className='app'>
                     <main>
-                       
                         <Route exact path='/' component={GetMyScope}  />
                     </main>
                 </div>

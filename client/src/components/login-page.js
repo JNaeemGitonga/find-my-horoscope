@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import './getmyscope.css';
 import Navbar from './nav-bar';
 import solar from './solar-eclipse_1024.jpg';
+import './login-page.css';
 
 
 export default class LoginPage extends React.Component {

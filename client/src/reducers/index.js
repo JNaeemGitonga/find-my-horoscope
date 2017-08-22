@@ -1,13 +1,14 @@
 // import * as actions from '../actions';
 
 const initialState = {
-    loading: false,
-    clicked: false,
-    error: null,
+    loading:false,
+    clicked:false,
+    error:null,
     sign:'',
-    horoscopes: [],
+    horoscopes:[],
     scopeOfDay:[],
-    day:''
+    day:'',
+    currentUser:null
 }
 
 

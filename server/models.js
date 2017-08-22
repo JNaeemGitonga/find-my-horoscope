@@ -30,8 +30,8 @@ const userSchema = mongoose.Schema({
 userSchema.methods.apiRepr = function() {
     return{
         facebookId: this.facebookId,
-        name: this.name,
-
+        // name: this.name,
+        id: this._id
     }
 }
 

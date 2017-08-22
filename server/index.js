@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const FacebookStragegy = require('passport-facebook');
+const FacebookStrategy = require('passport-facebook');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -18,29 +18,49 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 app.use(bodyParser.json());
 app.use(morgan('common'));
 app.use(cors());
+app.use(passport.initialize());
 mongoose.Promise = global.Promise;
+
+let secret = {
+    FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID,
+    FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET
+}
 
 if(process.env.NODE_ENV !== 'production') {
     secret = require('./secret');
 }
 
 passport.use(new FacebookStrategy({
-    clientID: FACEBOOK_APP_ID,
-    clientSecret: FACEBOOK_APP_SECRET,
+    clientID: secret.FACEBOOK_APP_ID,
+    clientSecret: secret.FACEBOOK_APP_SECRET,
     callbackURL: "http://localhost:3000/auth/facebook/callback"
   },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
+    (accessToken, refreshToken, profile, cb) => {
+      let user;
+        User
+            .findOne({facebookId: profile.id})
+            .then( _user => {
+                user = _user;
+                if (!user) {
+                    return User.create({
+                        facebookId:profile.id,
+                        accessToken:accessToken
+                    });
+                }
+                return User
+                    .findByIdAndUpdate(user.id, {accessToken:accessToken}, {new:true})
+                    // return cb(err, user);
+            })
+            .then(user => {
+                return cb(null, user);
+            })
+            .catch(err => console.log('error'));
+    }
 ));
 
 passport.use(
     new BearerStrategy((token, done) => {
-            // Job 3: Update this callback to try to find a user with a
-            // matching access token.  If they exist, let em in, if not,
-            // don't.
+           
       User
         .find({accessToken: token})
         .exec()
@@ -54,15 +74,21 @@ passport.use(
     })
 );
 
-app.get('/auth/facebook',
+app.get('/api/auth/facebook',
 passport.authenticate('facebook'));
 
-app.get('/auth/facebook/callback',
+app.get('/api/auth/facebook/callback',
 passport.authenticate('facebook', { failureRedirect: '/login' }),
-function(req, res) {
-  // Successful authentication, redirect home.
+(req, res) => {
+  res.cookie('accessToken', req.user.accessToken, {expires: 0});
   res.redirect('/');
 });
+
+app.get('/api/auth/logout', (req, res) => {
+    req.logout();
+    res.clearCookie('accessToken');
+    res.redirect('/login');
+  });
 
 app.get('/api/horoscopes', (req, res) => {
     Horoscope

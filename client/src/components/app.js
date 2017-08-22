@@ -3,6 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import GetMyScope from './getmyscope';
+import LoginPage from './login-page'
 // import {logon, getLessons} from '../actions'
 
 
@@ -20,7 +21,8 @@ export class App extends React.Component {
             <Router>
                 <div className='app'>
                     <main>
-                        <Route  exact path='/' component={GetMyScope}  />
+                        <Route exact path='/' component={LoginPage} />
+                        <Route exact path='/dashboard' component={GetMyScope}  />
                     </main>
                 </div>
             </Router>

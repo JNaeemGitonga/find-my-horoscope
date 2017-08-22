@@ -9,8 +9,6 @@ export class HoroscopeList extends React.Component {
     render(){
         let arr = this.props.scopeOfDay
         if (this.props.horoscopes){
-          console.log(this.props.scopeOfDay)
-            
             return (
             <div className="horoscope-list" aria-live="polite">
                    

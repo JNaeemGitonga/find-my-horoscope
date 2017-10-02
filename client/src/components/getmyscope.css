@@ -2,7 +2,7 @@ h1{
   text-align: center;
    color: black;
    /* font-size:4vw; */
-   margin-bottom: 0;
+   margin-bottom: 40px;
    margin-top: 50px;
 }
 
@@ -25,6 +25,8 @@ img{
 @media only screen and (min-width: 940px) {
 	h1 {
 		font-size:3vw;
-		margin-top:20px
+		margin-top:20px;
+		margin-bottom:30px
+    
 	}
 }

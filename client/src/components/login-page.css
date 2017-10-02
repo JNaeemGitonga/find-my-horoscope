@@ -41,7 +41,7 @@
     margin-bottom:10px;
 }
 
-@media (min-width: 720px){
+@media only screen and (min-width: 720px){
     .login-button {
         font-size:25px;
     }
@@ -50,24 +50,25 @@
     }
 }
 
-@media(min-width:1020px) {
+@media only screen and (min-width:1020px) {
     .login-botton{
         font-size:2vw;
     }
 }
-@media (min-width:1580px) {
+@media only screen and (min-width:1580px) {
     .aboutUs {
         width:40px
     }
 }
 
-@media(min-width:1199px) {
+@media only screen and (min-width:1199px) {
     .signup-form {
         margin-top:60px;
     }
+    
 }
 
-@media (max-width: 425px){
+@media only screen and (max-width: 425px){
    .form-group1 {
     margin:auto;
    }
@@ -91,5 +92,17 @@
 
     .password1 {
         margin:auto;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .signup-outter-box {
+        text-align:center;
+    }
+
+    .signup-form {}
+
+    h1 {
+        margin-bottom:0
     }
 }

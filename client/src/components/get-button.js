@@ -1,19 +1,20 @@
 import React from 'react';
 import './get-button.css';
 import {connect} from 'react-redux';
-import {fetchHoroscopes, getButtonClicked, switchBack, scopeOfDay} from '../actions';
+import {fetchHoroscopes, getButtonClicked,scopeOfDay,fetchHoroscopes2} from '../actions';
 
 export class GetHoroscope extends React.Component {
     
     componentWillMount(){
-      this.props.dispatch(fetchHoroscopes());
+      if (this.props.jwt) return this.props.dispatch(fetchHoroscopes2( ));
+      return this.props.dispatch(fetchHoroscopes())
     }
     getHoroscope(){
       this.props.dispatch(getButtonClicked());
       // window.setTimeout(() => this.props.dispatch(switchBack()), 5000)
       this.props.dispatch(scopeOfDay())
     }
-
+ 
   render(){
     
       return (
@@ -29,7 +30,8 @@ export class GetHoroscope extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  clicked: state.clicked,
-  sign:state.sign
+  clicked: state.zodiacReducer.clicked,
+  sign:state.zodiacReducer.sign,
+  jwt:state.zodiacReducer.jwt,
 })
 export default connect(mapStateToProps)(GetHoroscope) 

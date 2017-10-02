@@ -2,38 +2,53 @@
 const path = require('path');
 const express = require('express');
 const passport = require('passport');
+const app = express();
 const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
 const FacebookStrategy = require('passport-facebook');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const BearerStrategy = require('passport-http-bearer').Strategy;
 
 const {Horoscope, User} = require('./models');
-const {PORT, DATABASE_URL} = require('./config');
-
-const app = express();
-app.use(express.static(path.resolve(__dirname, '../client/build')));
-
-app.use(bodyParser.json());
-app.use(morgan('common'));
-app.use(cors());
-app.use(passport.initialize());
+const {PORT, DATABASE_URL, JWT_SECRET,
+    FACEBOOK_APP_ID,FACEBOOK_APP_SECRET} = require('./config');
+const {router: usersRouter} = require('./users');
+const {router: authRouter, basicStrategy, jwtStrategy} = require('./auth');
 mongoose.Promise = global.Promise;
 
-let secret = {
-    FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID,
-    FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET
-}
 
-if(process.env.NODE_ENV !== 'production') {
-    secret = require('./secret');
-}
+app.use(bodyParser.json());
+passport.serializeUser(function(user, done) {
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function(user, done) {
+    done(null, user);
+  });
+  
+  app.use(expressValidator()); 
+  app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
+    if (req.method === 'OPTIONS') {
+      return res.send(204);
+    }    
+    next();  
+  }); 
+app.use(morgan('common')); 
+app.use(passport.initialize());
+
+passport.use(basicStrategy); 
+passport.use(jwtStrategy);
+app.use('/api/getmyscope/users', usersRouter);
+app.use('/api/getmyscope/auth', authRouter);
 
 passport.use(
     new FacebookStrategy({
-        clientID: secret.FACEBOOK_APP_ID,
-        clientSecret: secret.FACEBOOK_APP_SECRET,
+        clientID: FACEBOOK_APP_ID,
+        clientSecret: FACEBOOK_APP_SECRET,
         callbackURL: "/api/auth/facebook/callback",
         profileFields:['id','displayName','email','name']
   },
@@ -69,12 +84,10 @@ passport.use(
            const query ={
                accessToken: token
            }
-           console.log(query)
       User
         .find(query)
         .exec()
         .then(user => {
-            console.log("76 USER", user)
           if (!user) {
             return done(null, false);
           }
@@ -94,7 +107,7 @@ app.get('/api/auth/facebook/callback',
     }),
     (req, res) => {
         res.cookie('accessToken',req.user.accessToken, {expires: 0});
-        res.redirect('/');
+        res.redirect(`/getmyscope/${req.user._id}`);
     }
 );
 
@@ -111,8 +124,8 @@ app.get('/api/me',
   } 
 );
 
-app.get('/api/horoscopes',
-    passport.authenticate('bearer', {session:false}),
+app.get('/api/getmyscope/horoscopes',
+
     (req, res) => {
    
     Horoscope
@@ -128,6 +141,24 @@ app.get('/api/horoscopes',
 });
 
 
+app.get('/api/getmyscope2/horoscopes',
+
+    (req, res) => {
+   
+    Horoscope
+        .find()
+        .then(horoscopes => {
+           res.json(horoscopes.map(horoscope => {
+            return horoscope.apiRepr()})) 
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json({error:'sorry, something went wrong.'})
+        })
+});
+
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
 app.get(/^(?!\/api(\/|$))/, (req, res) => {
     const index = path.resolve(__dirname, '../client/build', 'index.html');
     res.sendFile(index);
@@ -136,7 +167,7 @@ app.get(/^(?!\/api(\/|$))/, (req, res) => {
 let server;
 function runServer(databaseUrl=DATABASE_URL,port=3001) {
     return new Promise((resolve, reject) => {
-        mongoose.connect(databaseUrl, err => {
+        mongoose.connect(databaseUrl, {useMongoClient: true} , err => {
             if (err) {
                 return reject(err)
             }
@@ -145,7 +176,7 @@ function runServer(databaseUrl=DATABASE_URL,port=3001) {
             resolve();
             })
             .on('error', err => {
-                mongoose.disconnect();
+                mongoose.disconnect(); 
                 reject(err)
             });
         })

@@ -6,22 +6,20 @@ import {Link} from 'react-router-dom';
 export class Navbar extends React.Component {
   
     render(){
-        let style ={
-            'textAlign':'left'
-        }
+        
         if (!this.props.currentUser){
             return (
                 
-                    <div className="navigation-bar">
-                        
+                <div className="navigation-bar">
                     <nav className="navigation-bar-nav">
-                        <span className='welcome-message'>Welcome to What's My Scope?</span>
+                        <span className='welcome-message'>
+                            Welcome to <Link to='/'>What's My Scope?</Link></span>
                         <ul>
-                            <a href={"/api/auth/facebook"} ><li>LOGIN</li></a>
-                            
-                     </ul>
+                            <li><Link to='/login'>LOGIN</Link></li>
+                                
+                        </ul>
                     </nav>
-                    </div>
+                </div>
                 );
         }
         return (
@@ -30,7 +28,6 @@ export class Navbar extends React.Component {
             <nav className="navigation-bar-nav">
                 <span className='welcome-message'>Welcome home {this.props.name}!</span>
                 <ul>
-                    <a to='/'><li>HOME</li></a>
                     <a href='/api/auth/logout'><li>LOGOUT</li></a>
                 </ul>
             </nav>
@@ -42,8 +39,8 @@ export class Navbar extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        currentUser:state.currentUser,
-        name:state.name
+        currentUser:state.zodiacReducer.currentUser,
+        name:state.zodiacReducer.name
     }
 }
 export default connect(mapStateToProps)(Navbar)

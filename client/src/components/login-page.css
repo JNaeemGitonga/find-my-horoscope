@@ -4,3 +4,17 @@
 .about-us{
     text-align:center;
 }
+
+.aboutUs {
+   width:60%;
+   margin:auto
+}
+.come-heading {
+    margin-bottom:50px;
+}
+
+@media (min-width:1580px) {
+    .aboutUs {
+        width:40px
+    }
+}

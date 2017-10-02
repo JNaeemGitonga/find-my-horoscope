@@ -1,5 +1,6 @@
 import request from "superagent";
 import * as Cookies from 'js-cookie';
+import {push} from 'react-router-redux';
 
 
 export const FETCH_HOROSCOPE_REQUEST = 'FETCH_HOROSCOPE_REQUEST';
@@ -66,17 +67,17 @@ export const getCurrentUserRequest = () => ({
     type: GET_CURRENT_USER_REQUEST,
 });
 
-export const fetchHoroscopes = ()=> dispatch =>{
-    const accessToken = Cookies.get('accessToken')
+export const fetchHoroscopes = (jwt)=> dispatch =>{
+    let accessToken = Cookies.get('accessToken') ;
     let horoscopesArray;
     dispatch(fetchHoroscopeRequest())
     request
-        .get('api/horoscopes')
+        .get('/api/getmyScope/horoscopes')
         .set({'Authorization': `Bearer ${accessToken}`})
         .then( res => {
         if (!res.ok){
             return Promise.reject(res.statusText);
-        }
+        } 
         horoscopesArray = res.body
         return horoscopesArray ; 
     }).then( horoscopesArray => {
@@ -89,7 +90,6 @@ export const getCurrentUser = () => dispatch => {
     if (accessToken) {
         dispatch(getCurrentUserRequest());
         request
-            console.log("HERE IS UR TOKEN====>",accessToken)
             .get('/api/me')
             .set({'Authorization':`Bearer ${accessToken}`})
             .then(res => {
@@ -100,7 +100,6 @@ export const getCurrentUser = () => dispatch => {
                     }
                     throw new Error(res.statusText)
                 }
-                console.log('this is res.body ======>',res.body)
                 dispatch(getCurrentUserSuccess(res.body))
             })
             .catch(err => dispatch(getCurrentUserError(err)))
@@ -124,7 +123,6 @@ export const name = name => ({
 })
 export const logon = () => dispatch =>{
     const accessToken = Cookies.get('accessToken');
-    console.log('LOOOOOKKKKKK====>', accessToken)
     fetch('/api/me', {
        headers: {
            'Authorization': `Bearer ${accessToken}`
@@ -139,10 +137,143 @@ export const logon = () => dispatch =>{
        }
        return res.json();
    }).then(currentUser => {
-       console.log('OJOO===>', currentUser)
         dispatch(name(currentUser.name))
        dispatch(getCurrentUserSuccess(currentUser))
        dispatch(logonRequest())}
    )
    .then(() => dispatch(logonSuccess()));
+}
+
+export const ENTER_PASSWORD = 'ENTER_PASSWORD';
+export const enterPass = password => ({
+    type:ENTER_PASSWORD,
+    password
+})
+
+export const SET_CONFIRM_PASSWORD = 'SET_CONFIRM_PASSWORD';
+export const setConfirmPass = confirmPass => ({
+    type:SET_CONFIRM_PASSWORD,
+    confirmPass
+})
+
+export const SET_JWT = 'SET_JWT';
+export const setJWT = jwt => ({
+    type:SET_JWT,
+    jwt
+})
+
+export const VALIDATE = 'VALIDATE';
+export const validate = val => ({
+    type:VALIDATE,
+    val
+})
+
+export const VALUE = 'VALUE'
+export const value = num =>({
+    type:VALUE, 
+    num
+})
+
+export const VALID = 'VALID';
+export const valid = (q,b) =>({
+    type:VALID,
+    q,
+    b
+})
+
+export const SET_USERNAME = 'SET_USERNAME';
+export const setUsername = username => ({
+    type:SET_USERNAME,
+    username
+})
+
+export const SET_USERID = 'SET_USERID';
+export const setUserId = userId => ({
+    type:SET_USERID,
+        userId
+})
+
+export const createUser = (username, password, fName, lName) => dispatch => {
+    let newUser = {
+
+            username:username,
+            firstName:fName,
+            lastName:lName,
+            password:password,
+            name: `${fName} ${lName}`
+    }
+    let userId;
+    return fetch('/api/getmyscope/users/signup', {
+        method:'POST',
+        headers: {
+            Accept: 'application/json', 
+            'Content-type': 'application/json',
+           },
+        body: JSON.stringify(newUser)
+        })
+        .then(res => {
+            if (res.ok) {
+                return request 
+                .post('/api/getmyscope/auth/login')
+                .set( 'Accept','application/json')
+                .set('Content-type', 'application/json')
+                .send(JSON.stringify({username:username,password:password})) 
+                .then(res => {
+                    dispatch(setJWT(res.body.authToken))
+                    userId = res.body.user._id;
+                    dispatch(setUserId(res.body.user._id))
+                    dispatch(getCurrentUserSuccess(res.body.user.name))
+                })
+               .then(() => dispatch(push(`/getmyscope/${userId}`)))
+               .catch(err => console.log('error from login', err))
+            }
+            else{  console.log(res.message)}
+            
+        })
+        .catch(err => {
+            alert(`${err} is your error!`)
+        })
+}
+
+export const login = (username,password) => dispatch => {
+    
+    let obj = {
+        username:username ,
+        password:password
+    }
+    
+    let userId;
+    request 
+        .post('/api/getmyscope/auth/login')
+        .set( 'Accept','application/json')
+        .set('Content-type', 'application/json')
+        .send(JSON.stringify(obj)) 
+        .then((res) => {
+            dispatch(setJWT(res.body.authToken))
+            dispatch(getCurrentUserSuccess(res.body.user))
+            dispatch(name(res.body.user.firstName))
+            userId = res.body.user._id;
+            dispatch(setUserId(res.body.user._id))
+            
+        })
+        .then(() => dispatch(push(`/getmyscope/${userId}`)))  
+        .catch(err => console.log('error from login', err))
+}
+
+export const fetchHoroscopes2 = (jwt)=> dispatch =>{
+    
+    let horoscopesArray;
+    dispatch(fetchHoroscopeRequest())
+    request
+        .get('/api/getmyScope2/horoscopes')
+        .set({'Authorization': `Bearer ${jwt}`})
+        .then( res => {
+        if (!res.ok){
+            return Promise.reject(res.statusText);
+        } 
+        horoscopesArray = res.body
+        return horoscopesArray ; 
+    }).then( horoscopesArray => {
+        return dispatch(fetchHoroscopeSuccess(horoscopesArray))
+    });
 }

@@ -1,9 +1,9 @@
 h1{
   text-align: center;
    color: black;
-   font-size:4vw;
+   /* font-size:4vw; */
    margin-bottom: 0;
-   margin-top: 0;
+   margin-top: 50px;
 }
 
 .info{
@@ -20,4 +20,11 @@ h1{
 
 img{
   width:100%
+}
+
+@media only screen and (min-width: 940px) {
+	h1 {
+		font-size:3vw;
+		margin-top:20px
+	}
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcryptjs');
 
 
 const quoteSchema = mongoose.Schema({
@@ -22,11 +22,15 @@ horoscopeSchema.methods.apiRepr = function() {
 }
 
 const userSchema = mongoose.Schema({
-    facebookId: {type: String, required: true},
+    facebookId: {type: String},
     accessToken: {type: String},
     name: {type: String},
     email: {type: String},
-    displayName: {type: String}
+    displayName: {type: String},
+    password:{type:String},
+    firstName:{type:String},
+    lastName: {type:String},
+    username:{type:String}
 })
 
 userSchema.methods.apiRepr = function() {
@@ -35,8 +39,19 @@ userSchema.methods.apiRepr = function() {
         facebookId: this.facebookId,
         name: this.name,
         email: this.email,
-        displayName: this.displayName
+        displayName: this.displayName,
+        password:this.password,
+        firstName:this.firstName,
+        lastName:this.lastName
     }
+}
+
+userSchema.methods.validatePassword = function(password) {
+    return bcrypt.compare(password, this.password);
+}
+  
+userSchema.statics.hashPassword = function(password) {
+    return bcrypt.hash(password, 10);
 }
 
 const User = mongoose.model('User', userSchema);

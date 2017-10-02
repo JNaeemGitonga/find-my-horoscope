@@ -1,25 +1,33 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import './getmyscope.css';
-import Navbar from './nav-bar';
-import solar from './solar-eclipse_1024.jpg';
+import Banner from './banner';
+import {login,logon} from '../actions';
 import './login-page.css';
+import * as Cookies from 'js-cookie';
 
 
-export default class LoginPage extends React.Component {
+
+export  class LoginPage extends React.Component {
     render() {
         return (
             <div className="navbar-only">
-            <Navbar />
-              <div className="container"> 
-                 <img src={solar}/>
-                <div className="info">
-                    
-                 <h1>What is Your Horoscope?</h1>
-               </div>
-              </div>
+            <Banner />
+              
                 <div className='login-box'>
-                    <a href={'/api/auth/facebook'}><button className='login-button'>Login with Facebook</button></a>
+                    <ul>
+                        <li className='link' onClick={() => {
+                        this.props.dispatch(login('demo@dummy.com','123445asdfk'))    
+                        }}>Demo</li>
+                        <li className='link'><Link to='/signup'>Sign Up</Link></li>
+                        <li className='link'><Link to='/login'>Login</Link></li>
+                        <li><a href={'/api/auth/facebook'}>
+                            <button className='login-button'>
+                            Facebook Login</button></a>
+                        </li>
+                    
+                    </ul>
                 </div>
                 <div className='about-us'>
                     <h2 className='about-heading'>About Us...</h2>
@@ -33,5 +41,18 @@ export default class LoginPage extends React.Component {
             </div>
         )
     }
-}
 
+    componentWillUnmount() {
+        let accessToken = Cookies.get('accessToken');
+        if (accessToken) {
+            this.props.dispatch(logon())
+        }
+    }
+}
+export const mapStateToProps = (state,props) => {
+    // const userId = props.match.params.userId;
+    return{
+     
+    }
+}
+export default connect(mapStateToProps)(LoginPage)

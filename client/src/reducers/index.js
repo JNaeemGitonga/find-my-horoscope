@@ -9,7 +9,17 @@ const initialState = {
     scopeOfDay:[],
     day:'',
     currentUser:null,
-    name:''
+    name:'',
+    password:null,
+    errorMessage:'Password does not match',
+    errorVisible:false,
+    confirmPassword:null,
+    jwt:null,
+    valid:false,
+    value:null,
+    validate:null,
+    username:null,
+    userId:null
 }
 
 
@@ -65,7 +75,40 @@ const initialState = {
         return Object.assign({}, state, {
             name:action.name
         })
-    }
+    }else if (action.type === 'ENTER_PASSWORD') {
+        return Object.assign({}, state, {
+            password:action.password
+        })
+    }else if (action.type === 'SET_JWT') {
+        return Object.assign({}, state, {
+            jwt:action.jwt
+        })
+    }else if (action.type === 'SET_CONFIRM_PASSWORD') {
+        return Object.assign({}, state, {
+            confirmPassword:action.confirmPass
+        })
+    }else if (action.type === 'VALIDATE') {
+        return Object.assign({}, state, {
+            validate:(action.val === state.password),
+            confirmPassword:action.val
+        })
+    }else if (action.type === 'VALUE') {
+        return Object.assign({}, state, {
+            value:action.num
+        })
+    }else if (action.type === 'VALID') {
+        return Object.assign({}, state, {
+            valid:action.q,
+            errorVisible:action.b
+        })
+    }else if (action.type === 'SET_USERID') {
+        return Object.assign({}, state, {
+            userId:action.userId
+        })
+    }else if (action.type === 'USER_LOGOUT') {
+        return state = null
+        }
+    
 
     return state
 }   

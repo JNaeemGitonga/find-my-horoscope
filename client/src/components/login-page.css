@@ -18,3 +18,36 @@
         width:40px
     }
 }
+
+@media(min-width:1199px) {
+    .signup-form {
+        margin-top:60px;
+    }
+}
+
+@media (max-width: 425px){
+   .form-group1 {
+    margin:auto;
+   }
+
+   .signup-form {
+        width:70%;
+        margin:auto;
+        display:inline-block;
+        margin-top:50px
+   }
+
+   .email {
+    margin:auto;
+    }
+
+    .cpassword {
+        margin:auto;
+
+    }
+
+
+    .password1 {
+        margin:auto;
+    }
+}

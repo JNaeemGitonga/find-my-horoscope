@@ -13,6 +13,10 @@ import {logon} from '../actions'
 export class App extends React.Component {
     componentDidMount() {
         this.props.dispatch(logon())
+        if (window.location.hash == '#_=_' ){
+            
+                return window.location.hash = '';
+        }
     }
     render() {
         if (!this.props.currentUser) {
@@ -27,11 +31,7 @@ export class App extends React.Component {
                 </div>
             </Router>);
         }
-        if (window.location.hash == '#_=_'){
-            history.replaceState 
-                ? history.replaceState(null, null, window.location.href.split('#')[0])
-                : window.location.hash = '';
-        }
+        
         return (
             <Router history={history}>
                 <div className='app'>

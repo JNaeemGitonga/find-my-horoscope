@@ -19,14 +19,12 @@ const router = express.Router();
 router.post('/login',
     (req, res) => {
 
-		console.log('i work')
 	const authToken = createAuthToken(req.body);	
 	User
 		.findOne({
 			username:req.body.username
 		})
 		.then(user => {
-			console.log(user)
 			if (user){
 				let obj = { 
 					authToken,
@@ -57,7 +55,6 @@ router.post('/refresh',
 	passport.authenticate('jwt', {session: false}),
 	(req, res) => { 
 		const authToken = createAuthToken(req.user);
-		console.log('from line 43 login',req.user)
 		res.json({authToken})
 	} 
 );

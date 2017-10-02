@@ -9,17 +9,10 @@ import './getmyscope.css';
 import Navbar from './nav-bar';
 import solar from './solar-eclipse_1024.jpg';
 import {fetchHoroscopes,logon} from '../actions';
-import * as Cookies from 'js-cookie';
 
 
 export class GetMyScope extends React.Component {
-	componentDidMount() {
-			let accessToken = Cookies.get('accessToken');
-			if (accessToken) {
-				console.log(accessToken)
-				this.props.dispatch(logon())
-			}
-	}
+	
     render() {
       if(this.props.clicked === false){
          return (

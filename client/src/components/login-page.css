@@ -13,6 +13,35 @@
     margin-bottom:50px;
 }
 
+
+.email {
+    margin-left:45px;
+}
+
+.cpassword {
+    margin-left:-60px;
+    display:inline-block
+}
+
+
+.password1 {
+    margin-left:7px
+}
+
+@media (min-width: 720px){
+    .login-button {
+        font-size:25px;
+    }
+    .start-button{
+        font-size:25px;
+    }
+}
+
+@media(min-width:1020px) {
+    .login-botton{
+        font-size:2vw;
+    }
+}
 @media (min-width:1580px) {
     .aboutUs {
         width:40px

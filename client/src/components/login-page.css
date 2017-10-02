@@ -15,11 +15,11 @@
 
 
 .email {
-    margin-left:45px;
+    margin-left:38px;
 }
 
 .cpassword {
-    margin-left:-60px;
+    margin-left:-55px;
     display:inline-block
 }
 
@@ -29,6 +29,10 @@
 
 .password1 {
     margin-left:7px
+}
+
+.pure-control-group {
+    margin-bottom:10px;
 }
 
 @media (min-width: 720px){

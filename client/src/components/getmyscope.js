@@ -12,17 +12,25 @@ import {fetchHoroscopes,logon} from '../actions';
 
 
 export class GetMyScope extends React.Component {
-	
+	constructor(props) {
+		super(props);
+		this.state = {
+			mar:0
+		} 
+	}
+
+	componentDidMount() {
+		if (this.props.currentUser) return this.setState({mar:'100px'})
+	}
     render() {
       if(this.props.clicked === false){
          return (
           <div className="navbar-only">
            <Navbar />
              	<div className="container"> 
-					<img src={solar} alt='eclispsed moon'/>
+					<img src={solar} style={{marginBottom:this.state.mar}}alt='eclispsed moon'/>
 					<div className="info">
-					
-						<h1>What is Your Horoscope?</h1>
+					<h1 className='scope-header one'>What is Your Horoscope?</h1>
 						<PickSign />
 						<GetHoroscope /> 
 					</div>
@@ -37,7 +45,7 @@ export class GetMyScope extends React.Component {
               	<img src={solar} alt='eclipsed moon'/>
                 <div className="info">
                     
-					<h1>Here&#39;​s Your Horoscope!</h1>
+					<h1 className='scope-header'>Here&#39;​s Your Horoscope!</h1>
 					<HoroscopeList  />
 					<PickSign  />
 					<GetAnotherHoroscope  />
@@ -52,7 +60,8 @@ export class GetMyScope extends React.Component {
  
   const mapStateToProps = state => ({
     clicked: state.zodiacReducer.clicked,
-    sign: state.zodiacReducer.sign,
+	sign: state.zodiacReducer.sign,
+	currentUser:state.zodiacReducer.currentUser,
    
 
   })

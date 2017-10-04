@@ -5,10 +5,7 @@
     text-align:center;
 }
 
-.aboutUs {
-   width:60%;
-   margin:auto
-}
+
 .come-heading {
     margin-bottom:50px;
 }
@@ -22,11 +19,10 @@
     display:inline-block;
     margin-bottom:10px
 }
-
-.btn {
-    margin-top:5px;
-    margin-bottom:50px;
+.login-span {
+    color:#117cc7
 }
+
 .signup-outter-box {
     margin:auto;
     text-align:center,
@@ -45,21 +41,16 @@
     margin-left:33px;
     margin-bottom:15px;
 }
-
-@media only screen and (min-width: 720px){
-    .login-button {
+.login-button {
         font-size:25px;
     }
+@media only screen and (min-width: 720px){
+    
     .start-button{
         font-size:25px;
     }
 }
 
-@media only screen and (min-width:1020px) {
-    .login-botton{
-        font-size:2vw;
-    }
-}
 @media only screen and (min-width:1580px) {
     .aboutUs {
         width:40px
@@ -100,14 +91,25 @@
     }
 }
 
+
 @media only screen and (max-width: 540px){
     .signup-outter-box {
         text-align:center;
     }
 
-    .signup-form {}
+    
+}
 
-    h1 {
-        margin-bottom:0
-    }
+h1.one {
+    margin-bottom:21.44px
+}
+
+.aboutUs {
+    width:55%;
+    margin:auto
+ }
+
+ .btn {
+    margin-top:15px;
+    margin-bottom:50px;
 }

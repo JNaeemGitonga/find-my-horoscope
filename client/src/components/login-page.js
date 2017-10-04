@@ -23,8 +23,8 @@ export  class LoginPage extends React.Component {
                         <li className='link'><Link to='/signup'>Sign Up</Link></li>
                         <li className='link'><Link to='/login'>Login</Link></li>
                         <li><a href={'/api/auth/facebook'}>
-                            <button className='login-button'>
-                            Facebook Login</button></a>
+                            <span className='login-span'>
+                            Facebook Login</span></a>
                         </li>
                     
                     </ul>

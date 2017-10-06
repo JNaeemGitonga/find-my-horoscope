@@ -94,11 +94,6 @@ footer {
         font-size:2vw;
     }
 }
-@media only screen and (min-width:1580px) {
-    .aboutUs {
-        width:40px
-    }
-}
 
 @media only screen and (min-width:1199px) {
     .signup-form {
